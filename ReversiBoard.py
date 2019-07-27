@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-BORAD_LENGTH = 6
+BORAD_LENGTH = 4
 
 class ReversiBoard:
     STONE_WHITE = 'W'
@@ -96,7 +96,11 @@ class ReversiBoard:
         ylength = len(self.__board_state)
         id_list = zip(range(ylength), self.__board_state)
 
-        rendered_board = "  0 1 2 3 4 5\n"
+        rendered_board = ' '
+        for n in range(BORAD_LENGTH):
+            rendered_board += ' ' + str(n)
+        
+        rendered_board+='\n'
         rendered_board += "\n".join([f'{n} ' + " ".join(row) for n, row in id_list])
         return rendered_board
     

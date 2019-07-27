@@ -6,9 +6,9 @@ from Player import Player
 
 class LerningMachine(Player):
     WINNER_SCORE = 1000.0   # 勝利時の褒章スコア
-    DEFAULT_ALPHA = 0.1  # 学習レート（スコア変動）は 1 割
+    DEFAULT_ALPHA = 0.3  # 学習レート（スコア変動）は 1 割
     DEFAULT_GAMMA = 0.9  # 続行時のスコア変動レート
-    DEFAULT_EPSILON = 0.3 # ランダムで置き場所を決定する確率
+    DEFAULT_EPSILON = 0.1 # ランダムで置き場所を決定する確率
 
     def __init__(self, board, color):
         super().__init__(board, color)
