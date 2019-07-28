@@ -8,6 +8,8 @@ board.show()
 
 winACnt = 0
 winBCnt = 0
+drawCnt = 0
+totalCnt = 0
 
 A=''
 B=''
@@ -29,14 +31,13 @@ while True:
     playerA._q.save()
 
     if(board.is_draw()):
-        print('A:' + str(winACnt) + ' B:' + str(winBCnt) + ' draw!!!!')
+        drawCnt+=1
     elif(board.is_win('W')):
         winACnt+=1
-        A+='A'
-        B=''
-        print('A:' + str(winACnt) + ' B:' + str(winBCnt) + ' ' + A)
     else:
         winBCnt+=1
-        A=''
-        B+='B'
-        print('A:' + str(winACnt) + ' B:' + str(winBCnt) + ' '+ B)
+    
+    totalCnt += 1
+    print('Total:' + str(totalCnt) + ' A:' + str(winACnt) + '(' + str(round(winACnt/totalCnt,2)*100) + '%) B:' +\
+          str(winBCnt) + '(' + str(round(winBCnt/totalCnt,2)*100) + '%) draw:' +\
+          str(drawCnt)+ '(' + str(round(drawCnt/totalCnt,2)*100) + '%)')
